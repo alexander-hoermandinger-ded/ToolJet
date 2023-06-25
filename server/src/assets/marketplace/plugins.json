@@ -30,5 +30,13 @@
     "id": "textract",
     "author": "Tooljet",
     "timestamp": "Wed, 19 Apr 2023 11:36:56 GMT"
+  },
+  {
+    "name": "jira",
+    "description": "api plugin from jira",
+    "version": "1.0.0",
+    "id": "jira",
+    "author": "Tooljet",
+    "timestamp": "Sun, 25 Jun 2023 11:39:30 GMT"
   }
 ]

@@ -1,0 +1,86 @@
+
+{
+  "$schema": "https://raw.githubusercontent.com/ToolJet/ToolJet/develop/plugins/schemas/operations.schema.json",
+  "title": "Jira datasource",
+  "description": "A schema defining Jira datasource",
+  "type": "api",
+  "defaults": {},
+  "properties": {
+    "operation": {
+      "label": "Operation",
+      "key": "operation",
+      "type": "dropdown-component-flip",
+      "description": "Single select dropdown for operation",
+      "list": [
+        {
+          "value": "search_jira",
+          "name": "Search Jira"
+        },
+        {
+          "value": "create_task",
+          "name": "Create Jira Task"
+        }
+      ]
+    },
+    "search_jira": {
+      "jql": {
+        "label": "JQL Query",
+        "key": "jql",
+        "type": "codehinter",
+        "lineNumbers": false,
+        "description": "Enter JQL query",
+        "width": "450px",
+        "height": "150px",
+        "className": "codehinter-plugins",
+        "placeholder": "Enter JQL query"
+      }
+    },
+    "create_task": {
+      "project": {
+        "label": "Jira Project",
+        "key": "createTaskProject",
+        "type": "codehinter",
+        "description": "Enter Jira Project Name",
+        "width": "320px",
+        "height": "36px",
+        "lineNumbers": false,
+        "className": "codehinter-plugins",
+        "placeholder": "Enter Jira Project"
+      },
+      "description": {
+        "label": "Jira Task Description",
+        "key": "createTaskDescription",
+        "type": "codehinter",
+        "description": "Enter Jira Task description",
+        "width": "320px",
+        "height": "36px",
+        "lineNumbers": false,
+        "className": "codehinter-plugins",
+        "placeholder": "Enter Jira Task description"
+      },
+      "summary": {
+        "label": "Jira Task Summary",
+        "key": "createTaskSummary",
+        "type": "codehinter",
+        "description": "Enter Jira Task summary",
+        "width": "320px",
+        "height": "36px",
+        "lineNumbers": false,
+        "className": "codehinter-plugins",
+        "placeholder": "Enter Jira Task summary"
+      },
+      "scrumTeam": {
+        "label": "Jira Task Scrum Team",
+        "key": "createTaskScrumTeam",
+        "type": "codehinter",
+        "description": "Enter Jira Task Scrum Team",
+        "width": "320px",
+        "height": "36px",
+        "lineNumbers": false,
+        "className": "codehinter-plugins",
+        "placeholder": "Enter Jira Task Scrum Team"
+      }
+    }
+
+  }
+}

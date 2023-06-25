@@ -1,0 +1,73 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ToolJet/ToolJet/develop/plugins/schemas/manifest.schema.json",
+  "title": "Jira datasource",
+  "description": "A schema defining Jira datasource",
+  "type": "api",
+  "source": {
+    "name": "Jira",
+    "kind": "jira",
+    "exposedVariables": {
+      "isLoading": false,
+      "data": {},
+      "rawData": {}
+    },
+    "options": {
+      "auth_type": {
+        "type": "string"
+      },
+      "personal_token": {
+        "type": "string",
+        "encrypted": true
+      },
+      "baseUrl": {
+        "type": "string"
+      }
+    }
+  },
+  "defaults": {
+    "auth_type": {
+      "value": "personal_access_token"
+    },
+    "personal_token": {
+      "value": ""
+    },
+    "baseUrl": {
+      "value": ""
+    }
+  },
+  "properties": {
+    "credentials": {
+      "label": "Authentication",
+      "key": "auth_type",
+      "type": "dropdown-component-flip",
+      "description": "Single select dropdown for choosing credentials",
+      "list": [
+        {
+          "value": "personal_access_token",
+          "name": "Use Personal Access Token"
+        }
+      ],
+      "commonFields": {
+        "host": {
+          "label": "Jira Base URL",
+          "key": "baseUrl",
+          "type": "text",
+          "description": "Enter Jira Base URL"
+        }
+      }
+    },
+    "personal_access_token": {
+      "token": {
+        "label": "Token",
+        "key": "personal_token",
+        "type": "password",
+        "description": "Enter personal access token",
+        "hint": "You can generate a personal access token from your Github account settings."
+      }
+    }
+  },
+  "required": [
+    "personal_token",
+    "baseUrl"
+  ]
+}
