@@ -1,0 +1,187 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ToolJet/ToolJet/develop/plugins/schemas/operations.schema.json",
+  "title": "Dependency Track datasource",
+  "description": "A schema defining Dependency Track datasource",
+  "type": "api",
+  "defaults": {},
+  "properties": {
+    "operation": {
+      "label": "Operation",
+      "key": "operation",
+      "type": "dropdown-component-flip",
+      "description": "Single select dropdown for operation",
+      "list": [
+        {
+          "value": "get_findings",
+          "name": "List Findings"
+        },
+        {
+          "value": "create_analysis_trail",
+          "name": "Create Analysis Trail"
+        }
+      ]
+    },
+    "get_findings": {
+      "project": {
+        "label": "Project ID",
+        "key": "project",
+        "type": "codehinter",
+        "lineNumbers": false,
+        "description": "Enter Dependency Track Project ID",
+        "width": "320px",
+        "height": "36px",
+        "className": "codehinter-plugins",
+        "placeholder": "Enter Dependency Track Project ID"
+      }
+    },
+    "create_analysis_trail": {
+      "project": {
+        "label": "Project ID",
+        "key": "project",
+        "type": "codehinter",
+        "lineNumbers": false,
+        "description": "Enter Dependency Track Project ID",
+        "width": "320px",
+        "height": "36px",
+        "className": "codehinter-plugins",
+        "placeholder": "Enter Dependency Track Project ID"
+      },
+      "component": {
+        "label": "Component ID",
+        "key": "component",
+        "type": "codehinter",
+        "description": "Enter Dependency Track Component ID",
+        "width": "320px",
+        "height": "36px",
+        "lineNumbers": false,
+        "className": "codehinter-plugins",
+        "placeholder": "Enter Dependency Track Component ID"
+      },
+      "vulnerability": {
+        "label": "Vulnerability ID",
+        "key": "vulnerability",
+        "type": "codehinter",
+        "description": "Enter Dependency Track Vulnerability ID",
+        "width": "320px",
+        "height": "36px",
+        "lineNumbers": false,
+        "className": "codehinter-plugins",
+        "placeholder": "Enter Dependency Track Vulnerability ID"
+      },
+      "state": {
+        "label": "State",
+        "key": "createAnalysisTrailState",
+        "className": "codehinter-plugins col-4",
+        "type": "dropdown",
+        "description": "Single select dropdown for choosing state",
+        "list": [
+          {
+            "value": "NOT_SET",
+            "name": "Not Set"
+          },
+          {
+            "value": "EXPLOITABLE",
+            "name": "Exploitable"
+          },
+          {
+            "value": "IN_TRIAGE",
+            "name": "In Triage"
+          },
+          {
+            "value": "RESOLVED",
+            "name": "Resolved"
+          },
+          {
+            "value": "FALSE_POSITIVE",
+            "name": "False Positive"
+          },
+          {
+            "value": "NOT_AFFECTED",
+            "name": "Not Affected"
+          }
+        ]
+      },
+      "justification": {
+        "label": "Justification",
+        "key": "createAnalysisTrailJustification",
+        "className": "codehinter-plugins col-4",
+        "type": "dropdown",
+        "description": "Single select dropdown for choosing justification",
+        "list": [
+          {
+            "value": "NOT_SET",
+            "name": "Not Set"
+          },
+          {
+            "value": "CODE_NOT_PRESENT",
+            "name": "Code not present"
+          },
+          {
+            "value": "CODE_NOT_REACHABLE",
+            "name": "Code not reachable"
+          }
+        ]
+      },
+      "response": {
+        "label": "Vendor response",
+        "key": "createAnalysisTrailResponse",
+        "className": "codehinter-plugins col-4",
+        "type": "dropdown",
+        "description": "Single select dropdown for choosing justification",
+        "list": [
+          {
+            "value": "NOT_SET",
+            "name": "Not set"
+          },
+          {
+            "value": "CAN_NOT_FIX",
+            "name": "Cannot fix"
+          },
+          {
+            "value": "WILL_NOT_FIX",
+            "name": "Will not fix"
+          }
+        ]
+      },
+      "comment": {
+        "label": "Comment",
+        "key": "createAnalysisTrailComment",
+        "type": "codehinter",
+        "description": "Enter comment",
+        "width": "320px",
+        "height": "36px",
+        "lineNumbers": false,
+        "className": "codehinter-plugins",
+        "placeholder": "Enter comment"
+      },
+      "detail": {
+        "label": "Analysis Details",
+        "key": "createAnalysisTrailDetails",
+        "type": "codehinter",
+        "description": "Enter details",
+        "width": "320px",
+        "height": "36px",
+        "lineNumbers": false,
+        "className": "codehinter-plugins",
+        "placeholder": "Enter details"
+      },
+      "suppress": {
+        "label": "Suppress",
+        "key": "suppress",
+        "className": "col-4",
+        "type": "dropdown",
+        "description": "Single select dropdown for suppress",
+        "list": [
+          {
+            "value": true,
+            "name": "Suppress"
+          },
+          {
+            "value": false,
+            "name": "Do not suppress"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+
+{
+  "$schema": "https://raw.githubusercontent.com/ToolJet/ToolJet/develop/plugins/schemas/manifest.schema.json",
+  "title": "Dependency Track datasource",
+  "description": "A schema defining Dependency Track datasource",
+  "type": "api",
+  "source": {
+    "name": "Dependency Track",
+    "kind": "dependencytrack",
+    "exposedVariables": {
+      "isLoading": false,
+      "data": {},
+      "rawData": {}
+    },
+    "options": {
+      "auth_type": {
+        "type": "string"
+      },
+      "api_key": {
+        "type": "string",
+        "encrypted": true
+      },
+      "baseUrl": {
+        "type": "string"
+      }
+    }
+  },
+  "defaults": {
+    "auth_type": {
+      "value": "api_key"
+    },
+    "api_key": {
+      "value": ""
+    },
+    "baseUrl": {
+      "value": ""
+    }
+  },
+  "properties": {
+    "credentials": {
+      "label": "Authentication",
+      "key": "auth_type",
+      "type": "dropdown-component-flip",
+      "description": "Single select dropdown for choosing credentials",
+      "list": [
+        {
+          "value": "api_key",
+          "name": "Use API Key"
+        }
+      ],
+      "commonFields": {
+        "host": {
+          "label": "Dependency Track Base URL",
+          "key": "baseUrl",
+          "type": "text",
+          "description": "Enter Dependency Track Base URL"
+        }
+      }
+    },
+    "api_key": {
+      "token": {
+        "label": "API Key",
+        "key": "api_key",
+        "type": "password",
+        "description": "Enter API Key",
+        "hint": "You can generate an API Key in the Dependency Track admin settings."
+      }
+    }
+  },
+  "required": [
+    "api_key",
+    "baseUrl"
+  ]
+}

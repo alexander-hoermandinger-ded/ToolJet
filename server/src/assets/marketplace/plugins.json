@@ -38,5 +38,13 @@
     "id": "jira",
     "author": "Tooljet",
     "timestamp": "Sun, 25 Jun 2023 11:39:30 GMT"
+  },
+  {
+    "name": "dependencytrack",
+    "description": "api plugin from dependencytrack",
+    "version": "1.0.0",
+    "id": "dependencytrack",
+    "author": "Tooljet",
+    "timestamp": "Mon, 26 Jun 2023 06:59:10 GMT"
   }
 ]
