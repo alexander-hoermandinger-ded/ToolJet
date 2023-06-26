@@ -17,5 +17,6 @@ export type QueryOptions = {
 
 export enum Operation {
   GetFindings = 'get_findings',
+  GetAnalysis = 'get_analysis',
   CreateAnalysisTrail = 'create_analysis_trail'
 }

@@ -16,6 +16,10 @@
           "name": "List Findings"
         },
         {
+          "value": "get_analysis",
+          "name": "Get Analysis"
+        },
+        {
           "value": "create_analysis_trail",
           "name": "Create Analysis Trail"
         }
@@ -32,6 +36,41 @@
         "height": "36px",
         "className": "codehinter-plugins",
         "placeholder": "Enter Dependency Track Project ID"
+      }
+    },
+    "get_analysis": {
+      "project": {
+        "label": "Project ID",
+        "key": "project",
+        "type": "codehinter",
+        "lineNumbers": false,
+        "description": "Enter Dependency Track Project ID",
+        "width": "320px",
+        "height": "36px",
+        "className": "codehinter-plugins",
+        "placeholder": "Enter Dependency Track Project ID"
+      },
+      "component": {
+        "label": "Component ID",
+        "key": "component",
+        "type": "codehinter",
+        "description": "Enter Dependency Track Component ID",
+        "width": "320px",
+        "height": "36px",
+        "lineNumbers": false,
+        "className": "codehinter-plugins",
+        "placeholder": "Enter Dependency Track Component ID"
+      },
+      "vulnerability": {
+        "label": "Vulnerability ID",
+        "key": "vulnerability",
+        "type": "codehinter",
+        "description": "Enter Dependency Track Vulnerability ID",
+        "width": "320px",
+        "height": "36px",
+        "lineNumbers": false,
+        "className": "codehinter-plugins",
+        "placeholder": "Enter Dependency Track Vulnerability ID"
       }
     },
     "create_analysis_trail": {

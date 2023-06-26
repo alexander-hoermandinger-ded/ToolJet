@@ -1,7 +1,7 @@
 import { QueryError, QueryResult, QueryService, ConnectionTestResult } from '@tooljet-marketplace/common';
 import { SourceOptions, QueryOptions, Operation } from './types';
 import { default as axios } from 'axios';
-import { getFindings, createAnalysisTrail } from './query_operations';
+import { getFindings, createAnalysisTrail, getAnalysis } from './query_operations';
 
 export default class Dependencytrack implements QueryService {
 
@@ -15,6 +15,9 @@ export default class Dependencytrack implements QueryService {
         case Operation.GetFindings:
           result = await getFindings(axiosInstance, queryOptions);
           break;
+        case Operation.GetAnalysis:
+            result = await getAnalysis(axiosInstance, queryOptions);
+            break;
         case Operation.CreateAnalysisTrail:
           result = await createAnalysisTrail(axiosInstance, queryOptions);
           break;

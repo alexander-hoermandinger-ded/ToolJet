@@ -10,6 +10,29 @@ export async function getFindings(axiosInstance, options: QueryOptions): Promise
   return data;
 }
 
+export async function getAnalysis(axiosInstance, options: QueryOptions): Promise<object> {
+  const projectId = options.project;
+  if(!projectId) {
+    throw new QueryError('GetAnalysis query has no project set', 'GetAnalysis query has no project set', {});
+  }
+  const component = options.component;
+  if (!component)
+    throw new QueryError('GetAnalysis query has no component set', 'GetAnalysis query has no component set', {});
+
+  const vulnerability = options.vulnerability;
+  if (!vulnerability)
+    throw new QueryError('GetAnalysis query has no vulnerability set', 'GetAnalysis query has no vulnerability set', {});
+  const { data } = await axiosInstance.get('api/v1/analysis',
+    {
+      params: {
+        'project': projectId,
+        'component': component, 
+        'vulnerability': vulnerability
+      }
+    });
+  return data;
+}
+
 export async function createAnalysisTrail(axiosInstance, options: QueryOptions): Promise<object> {
   const project = options.project;
   if (!project)
